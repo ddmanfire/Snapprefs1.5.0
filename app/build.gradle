@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.marz.snapprefs"
+        minSdkVersion 12
+        targetSdkVersion 21
+        versionCode 16
+        versionName "1.4.9 beta"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    provided files('lib/XposedBridgeApi-54.jar')
+    compile 'com.google.android.gms:play-services-maps:7.8.0'
+    compile 'net.rdrei.android.dirchooser:library:2.1@aar'
+    compile 'com.googlecode.mp4parser:isoparser:1.0.5.4'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'de.cketti.library.changelog:ckchangelog:1.2.2'
+}
